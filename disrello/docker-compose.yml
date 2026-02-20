@@ -1,0 +1,16 @@
+services:
+  disrello:
+    build:
+      context: .
+    container_name: disrello
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - disrello_data:/data
+    restart: unless-stopped
+
+volumes:
+  disrello_data:
+
